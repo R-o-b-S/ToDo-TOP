@@ -1,0 +1,1 @@
+In this Odin Project assignment I have to create a ToDo list app.
