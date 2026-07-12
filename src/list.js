@@ -7,11 +7,11 @@ list[0] = new Element ("none", "Spesa Micio", "12/07/2026", "high", "Comprare cr
 list[1] = new Element ("none", "Lavare auto", "11/07/2026", "low", "Non piu' tardi delle 11:00");
 
 export function newTask () {  //form to enter new ToDo
-    const project = "none";
-    const task = window.prompt("New task title:");
-    const date = window.prompt("New task due date:");
-    const priority = window.prompt("low, medium, high");
-    const notes = window.prompt("New task notes:");
+    const project = document.getElementById("addProject").value;
+    const task = document.getElementById("addTask").value;
+    const date = document.getElementById("addDue").value;
+    const priority = document.getElementById("addPriority").value;
+    const notes = document.getElementById("addNotes").value;
     list.push(new Element (project, task, date, priority, notes));
 }
 

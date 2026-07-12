@@ -7,8 +7,36 @@
 </head>
 <body>
     <div id="main">
-        <button class="test" id="addTask">Add task</button>
+        <button class="test" id="addToDo">Add task</button>
         <button class="test" id="printList">Console list</button>
     </div>
+
+    <dialog action="" id="newToDo">
+            <form id="collect">
+                <div>
+                    <p>Fill this form to add a new book:</p>
+                    <label for="addProject">Project:</label>
+                    <input type="text" id="addProject" name="project">
+                
+                    <label for="addTask">Task:</label>
+                    <input type="text" id="addTask" name="task">
+                
+                    <label for="addDue">Due date:</label>
+                    <input type="date" id="addDue" name="date">
+                
+                    <label for="addPriority">Priority:</label>
+                    <input type="text" id="addPriority" name="priority">
+
+                    <label for="addNotes">Notes:</label>
+                    <input type="text" id="addNotes" name="notes">
+                </div>
+
+                <div id="formButtons">
+                    <button type="submit" class="doStuff" id="submitForm">Submit</button>
+                    <button class="doStuff" id="cancelForm">Cancel</button>
+                </div>
+            </form>
+            
+        </dialog>
 </body>
 </html>
