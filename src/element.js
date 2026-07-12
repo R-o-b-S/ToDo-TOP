@@ -1,4 +1,3 @@
-
 export class Element {
     constructor(task, date, notes) {
         this.task = task;
@@ -26,3 +25,4 @@ export class Element {
         this.notes = newNotes;
     }
 }
+

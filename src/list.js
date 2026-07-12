@@ -6,6 +6,13 @@ list[0] = new Element ("Spesa Micio", "12/07/2026", "Comprare crocche e lettiera
 
 list[1] = new Element ("Lavare auto", "11/07/2026", "Non piu' tardi delle 11:00");
 
+export function newTask () {
+    const task = window.prompt("New task title:");
+    const date = window.prompt("New task due date:");
+    const notes = window.prompt("New task notes:");
+    list.push(new Element (task, date, notes));
+}
+
 export function printList () {
     const l = list.length;
     for (let i=0; i<l; i++) {

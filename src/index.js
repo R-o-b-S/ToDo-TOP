@@ -1,4 +1,5 @@
 import "./styles.css";
-import { printList } from "./list.js";
+import { printList, newTask } from "./list.js";
 
-printList();
+document.getElementById("addTask").onclick = newTask;
+document.getElementById("printList").onclick = printList;
