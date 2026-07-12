@@ -1,7 +1,9 @@
-export class Element {
-    constructor(task, date, notes) {
+export class Element { //Class for ToDo elements
+    constructor(project, task, date, priority, notes) {
+        this.project = project;
         this.task = task;
         this.date = date;
+        this.priority = priority;
         this.notes = notes;
     }
 
@@ -26,3 +28,9 @@ export class Element {
     }
 }
 
+export const projects = [ //array that stores the list of projects and related color
+    {
+        project: "none",
+        color: "grey"
+    }
+];
