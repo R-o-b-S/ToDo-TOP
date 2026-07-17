@@ -1,4 +1,5 @@
-import { Element , projects } from "./element.js";
+import { Element } from "./element.js";
+import { projects } from "./project.js";
 
 const list = []; //array that stores all the ToDo
 
@@ -7,7 +8,7 @@ list[0] = new Element ("none", "Spesa Micio", "12/07/2026", "high", "Comprare cr
 list[1] = new Element ("none", "Lavare auto", "11/07/2026", "low", "Non piu' tardi delle 11:00");
 
 export function newTask () {  //form to enter new ToDo
-    const project = document.getElementById("addProject").value;
+    const project = document.getElementById("selectProject").value;
     const task = document.getElementById("addTask").value;
     const date = document.getElementById("addDue").value;
     const priority = document.getElementById("addPriority").value;

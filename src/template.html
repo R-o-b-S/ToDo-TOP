@@ -7,36 +7,54 @@
 </head>
 <body>
     <div id="main">
+        <button class="test" id="addProject">Add project</button>
         <button class="test" id="addToDo">Add task</button>
         <button class="test" id="printList">Console list</button>
     </div>
 
+    <dialog action="" id="newProject">
+        <form id="collectPrj">
+            <div>
+                <p>Fill this form to add a new Project:</p>
+                <label for="addProject">Project name:</label>
+                <input type="text" id="addProject" name="newProject">
+                
+                <label for="addColor">Project Color:</label>
+                <input type="color" id="addColor" name="prjColor">
+            </div>
+
+            <div id="formButtons">
+                <button type="submit" class="doStuff" id="submitPrjForm">Submit</button>
+                <button class="doStuff" id="cancelPrjForm">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
     <dialog action="" id="newToDo">
-            <form id="collect">
-                <div>
-                    <p>Fill this form to add a new book:</p>
-                    <label for="addProject">Project:</label>
-                    <input type="text" id="addProject" name="project">
+        <form id="collect">
+            <div>
+                <p>Fill this form to add a new To Do:</p>
+                <label for="selectProject">Project:</label>
+                <input type="text" id="selectProject" name="project">
                 
-                    <label for="addTask">Task:</label>
-                    <input type="text" id="addTask" name="task">
+                <label for="addTask">Task:</label>
+                <input type="text" id="addTask" name="task">
                 
-                    <label for="addDue">Due date:</label>
-                    <input type="date" id="addDue" name="date">
+                <label for="addDue">Due date:</label>
+                <input type="date" id="addDue" name="date">
                 
-                    <label for="addPriority">Priority:</label>
-                    <input type="text" id="addPriority" name="priority">
+                <label for="addPriority">Priority:</label>
+                <input type="text" id="addPriority" name="priority">
 
-                    <label for="addNotes">Notes:</label>
-                    <input type="text" id="addNotes" name="notes">
-                </div>
+                <label for="addNotes">Notes:</label>
+                <input type="text" id="addNotes" name="notes">
+            </div>
 
-                <div id="formButtons">
-                    <button type="submit" class="doStuff" id="submitForm">Submit</button>
-                    <button class="doStuff" id="cancelForm">Cancel</button>
-                </div>
-            </form>
-            
-        </dialog>
+            <div id="formButtons">
+                <button type="submit" class="doStuff" id="submitForm">Submit</button>
+                <button class="doStuff" id="cancelForm">Cancel</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>
