@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="main">
-        <button class="test" id="addProject">Add project</button>
+        <button class="test" id="addPrj">Add project</button>
         <button class="test" id="addToDo">Add task</button>
         <button class="test" id="printList">Console list</button>
     </div>
@@ -17,7 +17,7 @@
             <div>
                 <p>Fill this form to add a new Project:</p>
                 <label for="addProject">Project name:</label>
-                <input type="text" id="addProject" name="newProject">
+                <input type="text" id="addProject" name="project">
                 
                 <label for="addColor">Project Color:</label>
                 <input type="color" id="addColor" name="prjColor">
@@ -34,8 +34,10 @@
         <form id="collect">
             <div>
                 <p>Fill this form to add a new To Do:</p>
-                <label for="selectProject">Project:</label>
-                <input type="text" id="selectProject" name="project">
+                <label for="selectProject">Choose a pet:</label>
+                <select id="selectProject" name="project" >
+                    <option value="">--Please choose an option--</option>
+                </select>
                 
                 <label for="addTask">Task:</label>
                 <input type="text" id="addTask" name="task">

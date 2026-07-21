@@ -27,3 +27,46 @@ export function printList () { //print the entire ToDo list on console
         console.log("-----");
     }
 }
+
+function displayForm () { //displays form to add new ToDo
+    prjSelection();
+    const element = document.getElementById("newToDo");
+    element.showModal();
+}
+document.getElementById("addToDo").onclick = displayForm;
+
+function submitForm () { //submit form to add new ToDo
+    newTask();
+    closeForm ();
+}
+document.getElementById("submitForm").onclick = submitForm;
+
+function closeForm () { //close form without saving
+    const element = document.getElementById("newToDo");
+    element.close();
+    const form = document.getElementById("collect");
+    form.reset();
+    clearPrjSelection();  //clear project selection
+    event.preventDefault(); // Prevent auto page reload
+}
+document.getElementById("cancelForm").onclick = closeForm;
+
+function prjSelection () { //add the list of projects on the ToDo form
+    const counter = projects.length;
+    for (let i=0; i<counter; i++){
+        const newOp = document.createElement("option");
+        newOp.id = projects[i].project;
+        newOp.value = projects[i].project;
+        const txt = projects[i].project;
+        newOp.textContent = txt;
+        document.getElementById("selectProject").appendChild(newOp);
+    }
+}
+
+function clearPrjSelection () { //clear project selection
+    const counter = projects.length;
+    for (let i=0; i<counter; i++){
+        const element = document.getElementById(projects[i].project);
+        element.remove();
+    }
+}

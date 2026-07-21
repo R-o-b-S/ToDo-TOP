@@ -16,7 +16,7 @@ function displayPrjForm () { //displays form to add new project
     const element = document.getElementById("newProject");
     element.showModal();
 }
-document.getElementById("addProject").onclick = displayPrjForm;
+document.getElementById("addPrj").onclick = displayPrjForm;
 
 function submitPrjForm () { //submit form to add new project
     newProject();
@@ -36,6 +36,5 @@ document.getElementById("cancelPrjForm").onclick = closePrjForm;
 function newProject () {  //form to enter new project
     const project = document.getElementById("addProject").value;
     const color = document.getElementById("addColor").value;
-    
-    projects.push (new Project (project, color));
+    projects.push(new Project (project, color));
 }
