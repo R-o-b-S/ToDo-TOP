@@ -6,10 +6,14 @@
     <title>ToDo List</title>
 </head>
 <body>
-    <div id="main">
+    <div id="header">
         <button class="test" id="addPrj">Add project</button>
         <button class="test" id="addToDo">Add task</button>
         <button class="test" id="printList">Console list</button>
+    </div>
+
+    <div id="main">
+        
     </div>
 
     <dialog action="" id="newProject">
@@ -17,7 +21,8 @@
             <div>
                 <p>Fill this form to add a new Project:</p>
                 <label for="addProject">Project name:</label>
-                <input type="text" id="addProject" name="project">
+                <input type="text" id="addProject" name="project" 
+                required minlength="3" maxlength="12">
                 
                 <label for="addColor">Project Color:</label>
                 <input type="color" id="addColor" name="prjColor">
@@ -35,18 +40,19 @@
             <div>
                 <p>Fill this form to add a new To Do:</p>
                 <label for="selectProject">Choose a pet:</label>
-                <select id="selectProject" name="project" >
-                    <option value="">--Please choose an option--</option>
+                <select id="selectProject" name="project">
+                    <option value="none">--Please choose an option--</option>
                 </select>
                 
                 <label for="addTask">Task:</label>
-                <input type="text" id="addTask" name="task">
+                <input type="text" id="addTask" name="task"
+                required minlength="3" maxlength="12">
                 
                 <label for="addDue">Due date:</label>
-                <input type="date" id="addDue" name="date">
+                <input type="date" id="addDue" name="date" required>
                 
                 <label for="addPriority">Priority:</label>
-                <input type="text" id="addPriority" name="priority">
+                <input type="text" id="addPriority" name="priority" required>
 
                 <label for="addNotes">Notes:</label>
                 <input type="text" id="addNotes" name="notes">

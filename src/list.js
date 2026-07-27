@@ -1,7 +1,8 @@
 import { Element } from "./element.js";
 import { projects } from "./project.js";
+import { save , load } from "./storage.js";
 
-const list = []; //array that stores all the ToDo
+export const list = []; //array that stores all the ToDo
 
 list[0] = new Element ("none", "Spesa Micio", "12/07/2026", "high", "Comprare crocche e lettiera");
 
@@ -38,6 +39,8 @@ document.getElementById("addToDo").onclick = displayForm;
 function submitForm () { //submit form to add new ToDo
     newTask();
     closeForm ();
+    save ();
+    load ();
 }
 document.getElementById("submitForm").onclick = submitForm;
 
