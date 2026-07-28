@@ -1,4 +1,4 @@
-import { list } from "./list.js";
+import { list } from "./element.js";
 
 function storeItem (key, item) {
     localStorage.setItem(key, JSON.stringify(item));
@@ -18,7 +18,7 @@ export function save () {
 }
 
 export function load () {
-    const l = list.length;
+    const l = localStorage.length-1;
     for (let i=0; i<l; i++) {
         const print = getItem(i);
         console.log(print);
