@@ -1,4 +1,3 @@
-
 export function storeItem (key, item) { //saves a single ToDO in local storage
     localStorage.setItem(key, JSON.stringify(item));
 }

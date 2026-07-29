@@ -1,7 +1,7 @@
 import { projects } from "./project.js";
 import { storeItem , getItem } from "./storage.js";
 
-export class Element { //Class for ToDo elements
+class Element { //Class for ToDo elements
     constructor(project, task, date, priority, notes) {
         this.project = project;
         this.task = task;
@@ -10,12 +10,6 @@ export class Element { //Class for ToDo elements
         this.notes = notes;
     }
 }
-
-//export const list = []; //array that stores all the ToDo
-
-//list[0] = new Element ("none", "Spesa Micio", "12/07/2026", "high", "Comprare crocche e lettiera");
-
-//list[1] = new Element ("none", "Lavare auto", "11/07/2026", "low", "Non piu' tardi delle 11:00");
 
 let toDo = "";
 let key = "";
@@ -33,7 +27,7 @@ export function newTask () {  //form to enter new ToDo
 
 export function printList () { //print the entire ToDo list on console (from localStorage)
     const l = localStorage.length;
-    for (let i=0; i<l; i++) {
+    for (let i=1; i<l; i++) { //starting from 1 because length = 0 will be occupied by projects
         const print = getItem(i);
         console.log(print);
     }

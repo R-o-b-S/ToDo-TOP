@@ -1,9 +1,4 @@
-export const projects = [ //array that stores the list of projects and related color
-    {
-        project: "none",
-        color: "#708090"
-    }
-];
+import { storeItem , getItem } from "./storage.js";
 
 class Project { //Class for projects
     constructor(project, color) {
@@ -11,6 +6,23 @@ class Project { //Class for projects
         this.color = color;
     }
 }
+
+export let projects = []; //array that stores the list of projects and related color
+
+function loadProjects () {
+    const check = getItem("projects");
+    if (check === null) {
+        const project = "none";
+        const color = "#708090";
+        projects.push(new Project (project, color));
+        storeItem ("projects", projects);
+    }
+    else {
+        projects = check;
+    }
+}
+
+loadProjects(); //loads projects in lenght 0 of localStorage
 
 function displayPrjForm () { //displays form to add new project
     const element = document.getElementById("newProject");
@@ -37,4 +49,6 @@ function newProject () {  //form to enter new project
     const project = document.getElementById("addProject").value;
     const color = document.getElementById("addColor").value;
     projects.push(new Project (project, color));
+    localStorage.removeItem("projects");
+    storeItem ("projects", projects);
 }
