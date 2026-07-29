@@ -75,3 +75,29 @@ function clearPrjSelection () { //clear project selection
         element.remove();
     }
 }
+
+function today () {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth()+1;
+    const day = date.getDate();
+    const today = year + "-" + month + "-" + day;
+    return today;
+}
+
+function welcomeToDo () { //adds one task to the list to welcome the user first time website get accessed
+    const check = localStorage.length;
+    if (check === 1){
+        const project = "none";
+        const task = "welcome";
+        const date = today();
+        const priority = "low";
+        const notes = "add your first ToDo";
+        toDo = new Element (project, task, date, priority, notes);  //generate a new toDo
+        key = localStorage.length; // generate the key for the latest toDo
+        storeItem(key, toDo); //sends the lastest toDo in localStorage
+    }
+    else {return;}
+}
+
+welcomeToDo();
