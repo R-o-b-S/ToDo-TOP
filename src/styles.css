@@ -5,11 +5,67 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
+    background-color: #191919;
+    color: white;
+}
+
+@font-face {
+  font-family: Norse;
+  src: url(../font/Norsebold.otf);
 }
 
 #header {
     display: flex;
     padding: 2%;
     border-bottom: solid 2px;
-    border-color: blueviolet;
+    border-color: #EFBF04;
+    justify-content: space-between;
+}
+
+#commands {
+    display: flex;
+    justify-content: center;
+}
+
+#catch {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    color: #EFBF04;
+    font-family: Norse;
+}
+
+#banner {
+    margin: 0;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+#catch > svg {
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.test {
+    margin-right: 2%;
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: solid;
+    border-width: 2px;
+    border-color: #EFBF04;
+    background-color: #191919;
+    color: white;
+}
+
+.test:hover {
+  background-color: #EFBF04;
+  color: #191919;
 }
