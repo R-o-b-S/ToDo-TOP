@@ -11,8 +11,8 @@ class Element { //Class for ToDo elements
     }
 }
 
-let toDo = "";
-let key = "";
+export let list = []; //array with all the tasks
+
 
 export function newTask () {  //form to enter new ToDo
     const project = document.getElementById("selectProject").value;
@@ -20,17 +20,16 @@ export function newTask () {  //form to enter new ToDo
     const date = document.getElementById("addDue").value;
     const priority = document.getElementById("addPriority").value;
     const notes = document.getElementById("addNotes").value;
-    toDo = new Element (project, task, date, priority, notes);  //generate a new toDo
-    key = localStorage.length; // generate the key for the latest toDo
-    storeItem(key, toDo); //sends the lastest toDo in localStorage
+    list.push(new Element (project, task, date, priority, notes));
+    storeItem("tasks", list); //stores the latest tasks list
 }
 
 export function printList () { //print the entire ToDo list on console (from localStorage)
-    const l = localStorage.length;
-    for (let i=1; i<l; i++) { //starting from 1 because length = 0 will be occupied by projects
-        const print = getItem(i);
-        console.log(print);
-    }
+    const l = getItem("tasks");
+    console.log("storage");
+    console.log(l);
+    console.log("session");
+    console.log(list);
 }
 
 function displayForm () { //displays form to add new ToDo
@@ -86,18 +85,21 @@ function today () {
 }
 
 function welcomeToDo () { //adds one task to the list to welcome the user first time website get accessed
-    const check = localStorage.length;
+    const check = localStorage.length; //check for "tasks" key existence
+    console.log(check);
     if (check === 1){
         const project = "none";
         const task = "welcome";
         const date = today();
         const priority = "low";
         const notes = "add your first ToDo";
-        toDo = new Element (project, task, date, priority, notes);  //generate a new toDo
-        key = localStorage.length; // generate the key for the latest toDo
-        storeItem(key, toDo); //sends the lastest toDo in localStorage
+        list.push(new Element (project, task, date, priority, notes));
+        storeItem("tasks", list); //stores the latest tasks list
     }
-    else {return;}
+    else { //if "tasks" key exist the list is loaded in session 
+        list = getItem("tasks"); 
+    }
 }
 
 welcomeToDo();
+
