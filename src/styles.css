@@ -69,3 +69,69 @@ body {
   background-color: #EFBF04;
   color: #191919;
 }
+
+#main {
+    height: 98%;
+    width: 80%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.task {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 1.2rem;
+}
+
+.taskInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.taskProject {
+    height: 100%;
+    width: 4px;
+    border: 1px;
+    border-radius:5px;
+    margin-right: 1vw;
+}
+
+#a0 { /*ricordarsi di toglierlo va messo tramite JS*/
+    background-color: grey;
+}
+.taskName {
+    width: 8rem;
+    min-width: 8rem;
+    margin-right: 0.2rem;
+}
+
+.taskDueDate {
+    width: 5rem;
+    min-width: 5rem;
+    text-align: center;
+}
+
+.taskPriority {
+    min-width: 3.5rem;
+    width: 3.5rem;
+    text-align: center;
+}
+
+.taskNotes {  
+    overflow-y: hidden;  
+}
+
+.taskNotes.expanded {
+    height: 4rem;
+    overflow-y: auto;
+}
+
+#buttons0 { /* da aggiungere in JS */
+    min-width: 170px;
+    text-align: end;
+}
