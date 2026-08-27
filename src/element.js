@@ -1,5 +1,6 @@
 import { projects } from "./project.js";
 import { storeItem , getItem } from "./storage.js";
+import { showTasks, refreshDom } from "./dom.js";
 
 class Element { //Class for ToDo elements
     constructor(project, task, date, priority, notes) {
@@ -42,6 +43,7 @@ document.getElementById("addToDo").onclick = displayForm;
 function submitForm () { //submit form to add new ToDo
     newTask();
     closeForm ();
+    refreshDom ();
 }
 document.getElementById("submitForm").onclick = submitForm;
 
@@ -102,4 +104,4 @@ function welcomeToDo () { //adds one task to the list to welcome the user first 
 }
 
 welcomeToDo();
-
+showTasks ();

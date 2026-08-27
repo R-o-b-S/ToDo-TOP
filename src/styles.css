@@ -101,9 +101,6 @@ body {
     margin-right: 1vw;
 }
 
-#a0 { /*ricordarsi di toglierlo va messo tramite JS*/
-    background-color: grey;
-}
 .taskName {
     width: 8rem;
     min-width: 8rem;
@@ -129,9 +126,4 @@ body {
 .taskNotes.expanded {
     height: 4rem;
     overflow-y: auto;
-}
-
-#buttons0 { /* da aggiungere in JS */
-    min-width: 170px;
-    text-align: end;
 }
