@@ -1,5 +1,6 @@
 import { list } from "./element.js";
 import { projects } from "./project.js";
+import { storeItem } from "./storage.js";
 
 function getColor (item) {
     const count = projects.length;
@@ -69,6 +70,10 @@ export function showTasks () {
         compButt.id = "f"+i;
         txt = "complete";
         compButt.textContent = txt;
+        compButt.addEventListener ("click", () => {
+            list[i].complete = true;
+            console.log(list[i].complete);
+        });
         document.getElementById("buttons"+i).appendChild(compButt);
 
         const edButt = document.createElement("button");
@@ -76,6 +81,9 @@ export function showTasks () {
         edButt.id = "g"+i;
         txt = "edit";
         edButt.textContent = txt;
+        edButt.addEventListener ("click", () => {
+            console.log("edit"+i);
+        });
         document.getElementById("buttons"+i).appendChild(edButt);
 
         const erButt = document.createElement("button");
@@ -83,21 +91,31 @@ export function showTasks () {
         erButt.id = "h"+i;
         txt = "erase";
         erButt.textContent = txt;
+        erButt.addEventListener ("click", () => {
+            deleteTask(i);
+        });
         document.getElementById("buttons"+i).appendChild(erButt);
     }
 }
 
 
-function clearDom () {
-    const counter = list.length-1;
-    for (let i=0; i<counter; i++) {
+function clearDom (c) {
+    for (let i=0; i<c; i++) {
         const element = document.getElementById("index"+i);
-        console.log(element);
         element.remove();
     }
 }
 
 export function refreshDom () {
-    clearDom();
+    const counter = list.length-1;
+    clearDom(counter);
     showTasks();
+}
+
+function deleteTask (n) {
+    const counter = list.length;
+    clearDom (counter);
+    list.splice(n, 1);
+    showTasks();
+    storeItem("tasks", list); //stores the latest tasks list
 }

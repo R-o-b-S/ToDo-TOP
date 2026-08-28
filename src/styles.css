@@ -127,3 +127,33 @@ body {
     height: 4rem;
     overflow-y: auto;
 }
+
+.completeTask {
+    border: none;
+    background-color: #191919;
+    color:#EFBF04;
+}
+
+.completeTask:hover {
+    color: white;
+}
+
+.editTask {
+    border: none;
+    background-color: #191919;
+    color:#EFBF04;
+}
+
+.editTask:hover {
+    color: white;
+}
+
+.eraseTask {
+    border: none;
+    background-color: #191919;
+    color:#EFBF04;
+}
+
+.eraseTask:hover {
+    color: white;
+}
