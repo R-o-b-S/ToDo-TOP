@@ -55,7 +55,7 @@
         <form id="collect">
             <div>
                 <p>Fill this form to add a new To Do:</p>
-                <label for="selectProject">Choose a pet:</label>
+                <label for="selectProject">Choose a project:</label>
                 <select id="selectProject" name="project">
                     <option value="none">--Please choose an option--</option>
                 </select>
@@ -77,6 +77,36 @@
             <div id="formButtons">
                 <button type="submit" class="doStuff" id="submitForm">Submit</button>
                 <button class="doStuff" id="cancelForm">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog action="" id="editToDo">
+        <form id="edit">
+            <div>
+                <p>Fill this form to edit the selected To Do:</p>
+                <label for="selectEditProject">Choose a project:</label>
+                <select id="selectEditProject" name="project">
+                    <option value="none">--Please choose an option--</option>
+                </select>
+                
+                <label for="addEditTask">Task:</label>
+                <input type="text" id="addEditTask" name="task"
+                required minlength="3" maxlength="12">
+                
+                <label for="addEditDue">Due date:</label>
+                <input type="date" id="addEditDue" name="date" required>
+                
+                <label for="addEditPriority">Priority:</label>
+                <input type="text" id="addEditPriority" name="priority" required>
+
+                <label for="addEditNotes">Notes:</label>
+                <input type="text" id="addEditNotes" name="notes">
+            </div>
+
+            <div id="formButtons">
+                <button type="submit" class="doStuff" id="submitEditForm">Submit</button>
+                <button class="doStuff" id="cancelEditForm">Cancel</button>
             </div>
         </form>
     </dialog>

@@ -1,6 +1,6 @@
 import { projects } from "./project.js";
 import { storeItem , getItem } from "./storage.js";
-import { showTasks, refreshDom } from "./dom.js";
+import { showTasks, clearDom, refreshDom , edit} from "./dom.js";
 
 class Element { //Class for ToDo elements
     constructor(project, task, date, priority, notes) {
@@ -106,3 +106,49 @@ function welcomeToDo () { //adds one task to the list to welcome the user first 
 
 welcomeToDo();
 showTasks ();
+
+function editTask(n) {
+    list[n].project = document.getElementById("selectEditProject").value;
+    list[n].task = document.getElementById("addEditTask").value;
+    list[n].date = document.getElementById("addEditDue").value;
+    list[n].priority = document.getElementById("addEditPriority").value;
+    list[n].notes = document.getElementById("addEditNotes").value;
+    storeItem("tasks", list); //stores the latest tasks list
+}
+
+function prjSelectionEdit () { //add the list of projects on the ToDo Edit form
+    const counter = projects.length;
+    for (let i=0; i<counter; i++){
+        const newOp = document.createElement("option");
+        newOp.id = projects[i].project;
+        newOp.value = projects[i].project;
+        const txt = projects[i].project;
+        newOp.textContent = txt;
+        document.getElementById("selectEditProject").appendChild(newOp);
+    }
+}
+
+export function displayEditForm () { //displays form to edit a ToDo
+    prjSelectionEdit();
+    const element = document.getElementById("editToDo");
+    element.showModal();
+}
+
+function submitEditForm () { //submit form to edited ToDo
+    editTask(edit);
+    closeEditForm ();
+    const counter = list.length;
+    clearDom (counter);
+    showTasks();
+}
+document.getElementById("submitEditForm").onclick = submitEditForm;
+
+function closeEditForm () { //close form without saving
+    const element = document.getElementById("editToDo");
+    element.close();
+    const form = document.getElementById("edit");
+    form.reset();
+    clearPrjSelection();  //clear project selection
+    event.preventDefault(); // Prevent auto page reload
+}
+document.getElementById("cancelEditForm").onclick = closeEditForm;

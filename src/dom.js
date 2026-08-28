@@ -1,4 +1,4 @@
-import { list } from "./element.js";
+import { list , displayEditForm } from "./element.js";
 import { projects } from "./project.js";
 import { storeItem } from "./storage.js";
 
@@ -10,6 +10,8 @@ function getColor (item) {
         }
     }
 }
+
+export let edit = "";
 
 export function showTasks () {
     const counter = list.length;
@@ -82,7 +84,8 @@ export function showTasks () {
         txt = "edit";
         edButt.textContent = txt;
         edButt.addEventListener ("click", () => {
-            console.log("edit"+i);
+            edit = edButt.id.replace("g", "");
+            displayEditForm();
         });
         document.getElementById("buttons"+i).appendChild(edButt);
 
@@ -99,7 +102,7 @@ export function showTasks () {
 }
 
 
-function clearDom (c) {
+export function clearDom (c) {
     for (let i=0; i<c; i++) {
         const element = document.getElementById("index"+i);
         element.remove();
