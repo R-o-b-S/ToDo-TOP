@@ -1,3 +1,10 @@
+html {
+    --color1: #f2f6ff;
+    --color2: #1c2a5a;
+    --color3: #000000;
+    --color4: #b20000;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -5,8 +12,8 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background-color: #191919;
-    color: white;
+    background-color: var(--color1);
+    color: var(--color3);
 }
 
 @font-face {
@@ -18,7 +25,7 @@ body {
     display: flex;
     padding: 2%;
     border-bottom: solid 2px;
-    border-color: #EFBF04;
+    border-color: var(--color2);
     justify-content: space-between;
 }
 
@@ -38,7 +45,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 2rem;
-    color: #EFBF04;
+    color: var(--color2);
     font-family: Norse;
 }
 
@@ -60,14 +67,14 @@ body {
     border-radius: 12px;
     border: solid;
     border-width: 2px;
-    border-color: #EFBF04;
-    background-color: #191919;
-    color: white;
+    border-color: var(--color2);
+    background-color: var(--color1);
+    color: var(--color3);
 }
 
 .test:hover {
-  background-color: #EFBF04;
-  color: #191919;
+  background-color: var(--color2);
+  color: var(--color1);
 }
 
 #projectsList {
@@ -139,32 +146,44 @@ body {
 
 .completeTask {
     border: none;
-    background-color: #191919;
-    color:#EFBF04;
+    background-color: var(--color1);
+    color:var(--color2);
 }
 
 .completeTask:hover {
-    color: white;
+    color: var(--color4);
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: var(--color4)
 }
 
 .editTask {
     border: none;
-    background-color: #191919;
-    color:#EFBF04;
+    background-color: var(--color1);
+    color:var(--color2);
 }
 
 .editTask:hover {
-    color: white;
+    color: var(--color4);
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: var(--color4)
 }
 
 .eraseTask {
     border: none;
-    background-color: #191919;
-    color:#EFBF04;
+    background-color: var(--color1);
+    color: var(--color2);
 }
 
 .eraseTask:hover {
-    color: white;
+    color: var(--color4);
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: var(--color4)
 }
 
 .prjItem {
