@@ -70,6 +70,14 @@ body {
   color: #191919;
 }
 
+#projectsList {
+    width: 90%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
 #main {
     height: 98%;
     width: 80%;
@@ -85,6 +93,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     height: 1.2rem;
+    margin-top: 0.1rem;
 }
 
 .taskInfo {
@@ -156,4 +165,10 @@ body {
 
 .eraseTask:hover {
     color: white;
+}
+
+.prjItem {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1rem;
 }

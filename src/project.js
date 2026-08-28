@@ -16,9 +16,11 @@ function loadProjects () {
         const color = "#708090";
         projects.push(new Project (project, color));
         storeItem ("projects", projects);
+        showProjects ();
     }
     else {
         projects = check;
+        showProjects();
     }
 }
 
@@ -33,6 +35,8 @@ document.getElementById("addPrj").onclick = displayPrjForm;
 function submitPrjForm () { //submit form to add new project
     newProject();
     closePrjForm ();
+    clearPrjList();
+    showProjects();
 }
 document.getElementById("submitPrjForm").onclick = submitPrjForm;
 
@@ -51,4 +55,36 @@ function newProject () {  //form to enter new project
     projects.push(new Project (project, color));
     localStorage.removeItem("projects");
     storeItem ("projects", projects);
+}
+
+
+function showProjects () {
+    const counter = projects.length;
+    for (let i=0; i<counter; i++){
+        const newDiv = document.createElement("div");
+        newDiv.classList = "prjItem";
+        newDiv.id = "prj" + i;
+        document.getElementById("projectsList").appendChild(newDiv);
+
+        const colorDiv = document.createElement("div");
+        colorDiv.classList = "taskProject";
+        colorDiv.id = "prj" + i + "color";
+        const color = projects[i].color;
+        colorDiv.style.backgroundColor = color;
+        document.getElementById("prj"+i).appendChild(colorDiv);
+
+        const nameDiv = document.createElement("div");
+        nameDiv.id = "prj" + i + "name";
+        let txt = projects[i].project;
+        nameDiv.textContent = txt;
+        document.getElementById("prj"+i).appendChild(nameDiv);
+    }
+}
+
+function clearPrjList () {
+    const counter = projects.length-1;
+    for (let i=0; i<counter; i++) {
+        const element = document.getElementById("prj"+i);
+        element.remove();
+    }
 }
