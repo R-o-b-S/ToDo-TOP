@@ -1,6 +1,6 @@
 import { list , displayEditForm } from "./element.js";
 import { projects } from "./project.js";
-import { storeItem } from "./storage.js";
+import { storeItem , dateSorting } from "./storage.js";
 
 function getColor (item) {
     const count = projects.length;
@@ -14,6 +14,7 @@ function getColor (item) {
 export let edit = "";
 
 export function showTasks () {
+    dateSorting(list);
     if (showCompleted === true) {
         const counter = list.length;
         for (let i=0; i<counter; i++){
