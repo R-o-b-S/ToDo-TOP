@@ -112,7 +112,6 @@ function today () {
 
 function welcomeToDo () { //adds one task to the list to welcome the user first time website get accessed
     const check = localStorage.length; //check for "tasks" key existence
-    console.log(check);
     if (check === 1){
         const project = "none";
         const task = "welcome";

@@ -99,7 +99,6 @@ function printTask (i) {
         const c = list.length;
         clearDom(c);
         list[i].complete = "true";
-        console.log(list[i].complete);
         storeItem("tasks", list);
         showTasks();
     });
