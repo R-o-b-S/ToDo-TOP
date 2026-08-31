@@ -21,6 +21,21 @@ export function dateSorting () {
         if (dateA > dateB) {
             return 1;
         }
-        return 0;
+        else { //priority
+            if (a.priority === "low" && b.priority === "medium" || b.priority === "high") {
+                return 1;
+            }
+            if (a.priority === "medium" && b.priority === "high") {
+                return 1;
+            }
+            if (a.priority === "medium" && b.priority === "low") {
+                return -1;
+            }
+            if (a.priority === "high" && b.priority === "medium" || b.priority === "low") {
+                return -1;
+            }
+            return 0;
+        }
+    
     });
 }
