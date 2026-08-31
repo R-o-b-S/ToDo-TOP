@@ -9,7 +9,7 @@ class Element { //Class for ToDo elements
         this.date = date;
         this.priority = priority;
         this.notes = notes;
-        this.complete = false;
+        this.complete = "false";
     }
 }
 
