@@ -36,6 +36,7 @@ export function printList () { //print the entire ToDo list on console (from loc
 
 function displayForm () { //displays form to add new ToDo
     prjSelection();
+    prioritySelection();
     const element = document.getElementById("newToDo");
     element.showModal();
 }
@@ -54,6 +55,7 @@ function closeForm () { //close form without saving
     const form = document.getElementById("collect");
     form.reset();
     clearPrjSelection();  //clear project selection
+    clearPrioritySelection (); //clear priority selection
     event.preventDefault(); // Prevent auto page reload
 }
 document.getElementById("cancelForm").onclick = closeForm;
@@ -74,6 +76,27 @@ function clearPrjSelection () { //clear project selection
     const counter = projects.length;
     for (let i=0; i<counter; i++){
         const element = document.getElementById(projects[i].project);
+        element.remove();
+    }
+}
+
+const prio = ["high" , "medium" , "low"];
+
+function prioritySelection () { //add the list priorities on the ToDo form
+    for (let i=0; i<prio.length; i++){
+        const newOp = document.createElement("option");
+        newOp.id = "Prio"+i;
+        newOp.value = prio[i];
+        const txt = prio[i];
+        newOp.textContent = txt;
+        document.getElementById("addPriority").appendChild(newOp);
+    }
+}
+
+function clearPrioritySelection () { //clear priority selection
+    const counter = prio.length;
+    for (let i=0; i<counter; i++){
+        const element = document.getElementById("Prio"+i);
         element.remove();
     }
 }
@@ -128,8 +151,20 @@ function prjSelectionEdit () { //add the list of projects on the ToDo Edit form
     }
 }
 
+function prioritySelectionEdit () { //add the list priorities on the ToDo form
+    for (let i=0; i<prio.length; i++){
+        const newOp = document.createElement("option");
+        newOp.id = "Prio"+i;
+        newOp.value = prio[i];
+        const txt = prio[i];
+        newOp.textContent = txt;
+        document.getElementById("addEditPriority").appendChild(newOp);
+    }
+}
+
 export function displayEditForm () { //displays form to edit a ToDo
     prjSelectionEdit();
+    prioritySelectionEdit ();
     const element = document.getElementById("editToDo");
     element.showModal();
 }
@@ -149,6 +184,7 @@ function closeEditForm () { //close form without saving
     const form = document.getElementById("edit");
     form.reset();
     clearPrjSelection();  //clear project selection
+    clearPrioritySelection ();
     event.preventDefault(); // Prevent auto page reload
 }
 document.getElementById("cancelEditForm").onclick = closeEditForm;
