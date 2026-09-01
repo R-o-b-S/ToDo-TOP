@@ -1,6 +1,8 @@
 import { list , displayEditForm } from "./element.js";
 import { projects } from "./project.js";
-import { storeItem , dateSorting } from "./storage.js";
+import { storeItem , dateSorting, sortByProject } from "./storage.js";
+
+console.log("dom");
 
 function getColor (item) {
     const count = projects.length;
@@ -158,6 +160,8 @@ function deleteTask (n) {
     storeItem("tasks", list); //stores the latest tasks list
 }
 
+//show/hide completed tasks
+
 let showCompleted = false;
 
 function hideCompleted () {
@@ -198,3 +202,45 @@ function hideCompleted () {
 }
 
 document.getElementById("completeToggle").onclick = hideCompleted;
+
+//sort by project/date
+
+let sortingToggle = false;
+
+function sortedBy () {
+    const element = document.getElementById("sortByProject");
+    element.remove();
+    if (sortingToggle === true) {
+        const sortButt = document.createElement("button");
+        sortButt.classList = "test";
+        sortButt.id = "sortByProject";
+        let txt = "Sort by Project";
+        sortButt.textContent = txt;
+        sortButt.addEventListener ("click", () => {
+            sortedBy();
+        });
+        document.getElementById("butt4").appendChild(sortButt);
+        const c = list.length;
+        clearDom(c);
+        sortingToggle = false;
+        showTasks();
+    }
+    else if (sortingToggle === false) {
+        const sortButt = document.createElement("button");
+        sortButt.classList = "test";
+        sortButt.id = "sortByProject";
+        let txt = "Sort by due Date";
+        sortButt.textContent = txt;
+        sortButt.addEventListener ("click", () => {
+            sortedBy();
+        });
+        document.getElementById("butt4").appendChild(sortButt);
+        const c = list.length;
+        clearDom(c);
+        sortingToggle = true;
+        showTasks();
+    }
+    
+}
+
+document.getElementById("sortByProject").onclick = sortedBy;

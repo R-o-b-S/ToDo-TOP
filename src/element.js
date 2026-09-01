@@ -2,6 +2,8 @@ import { projects } from "./project.js";
 import { storeItem , getItem } from "./storage.js";
 import { showTasks, clearDom, refreshDom , edit} from "./dom.js";
 
+console.log("element");
+
 class Element { //Class for ToDo elements
     constructor(project, task, date, priority, notes) {
         this.project = project;

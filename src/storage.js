@@ -1,4 +1,7 @@
 import { list } from "./element.js";
+import { projects } from "./project.js";
+
+console.log("storage");
 
 export function storeItem (key, item) { //saves a single ToDO in local storage
     localStorage.setItem(key, JSON.stringify(item));
@@ -38,4 +41,8 @@ export function dateSorting () {
         }
     
     });
+}
+
+export function sortByProject () {
+    console.log ("test sort by Project");
 }

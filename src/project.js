@@ -1,5 +1,7 @@
 import { storeItem , getItem } from "./storage.js";
 
+console.log("project");
+
 class Project { //Class for projects
     constructor(project, color) {
         this.project = project;
