@@ -172,7 +172,7 @@ function hideCompleted () {
         compButt.addEventListener ("click", () => {
             hideCompleted();
         });
-        document.getElementById("commands").appendChild(compButt);
+        document.getElementById("butt3").appendChild(compButt);
         const c = list.length;
         clearDom(c);
         showCompleted = false;
@@ -188,7 +188,7 @@ function hideCompleted () {
         compButt.addEventListener ("click", () => {
             hideCompleted();
         });
-        document.getElementById("commands").appendChild(compButt);
+        document.getElementById("butt3").appendChild(compButt);
         const c = list.length;
         clearDom(c);
         showCompleted = true;
