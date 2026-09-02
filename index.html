@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+<script defer src="main.js"></script></head>
+<body>
+    <div id="header">
+        <div id="commands">
+            <button class="test" id="addPrj">Add project</button>
+            <button class="test" id="addToDo">Add task</button>
+            <div id="butt3"><button class="test" id="completeToggle">Show Completed</button></div>
+            <div id="butt4"><button class="test" id="sortByProject">Sort by Project</button></div>
+        </div>
+        <div id="catch">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#1c2a5a">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier"> 
+                <title>logo</title> 
+                <g id="Layer_2" data-name="Layer 2"> 
+                <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> 
+                <g id="Q3_icons" data-name="Q3 icons"> 
+                <path d="M26,30H42a2,2,0,0,0,2-2V20a2,2,0,0,0-2-2H26a2,2,0,0,0-2,2v2H16V14h6a2,2,0,0,0,2-2V4a2,2,0,0,0-2-2H6A2,2,0,0,0,4,4v8a2,2,0,0,0,2,2h6V40a2,2,0,0,0,2,2H24v2a2,2,0,0,0,2,2H42a2,2,0,0,0,2-2V36a2,2,0,0,0-2-2H26a2,2,0,0,0-2,2v2H16V26h8v2A2,2,0,0,0,26,30Zm2-8H40v4H28ZM8,6H20v4H8ZM28,38H40v4H28Z"></path> </g> </g> </g>
+            </svg>
+            <p id="title">To Do</p> 
+            <p id="banner">Your favorite task manager</p>
+        </div>
+    </div>
+
+    <div id="projectsList">
+        
+    </div>
+
+    <div id="main">
+        
+    </div>
+
+    <dialog action="" class="forms" id="newProject">
+        <form id="collectPrj">
+            <div>
+                <p>Fill this form to add a new Project:</p>
+                <label for="addProject">Project name:</label>
+                <input type="text" id="addProject" name="project" 
+                required minlength="3" maxlength="16">
+                
+                <label for="addColor">Project Color:</label>
+                <input type="color" id="addColor" name="prjColor">
+            </div>
+
+            <div id="formButtons">
+                <button type="submit" class="doStuff" id="submitPrjForm">Submit</button>
+                <button class="doStuff" id="cancelPrjForm">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog action="" class="forms" id="newToDo">
+        <form id="collect">
+            <div>
+                <p>Fill this form to add a new To Do:</p>
+                <label for="selectProject">Choose a project:</label>
+                <select id="selectProject" name="project">
+                    <option value="none">--Please choose an option--</option>
+                </select>
+                
+                <label for="addTask">Task:</label>
+                <input type="text" id="addTask" name="task"
+                required minlength="3" maxlength="18">
+                
+                <label for="addDue">Due date:</label>
+                <input type="date" id="addDue" name="date" required>
+                
+                <label for="addPriority">Priority:</label>
+                <select type="text" id="addPriority" name="priority">
+                    <option value="low">--Please choose an option--</option>
+                </select>
+
+                <label for="addNotes">Notes:</label>
+                <input type="text" id="addNotes" name="notes">
+            </div>
+
+            <div id="formButtons">
+                <button type="submit" class="doStuff" id="submitForm">Submit</button>
+                <button class="doStuff" id="cancelForm">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog action="" class="forms" id="editToDo">
+        <form id="edit">
+            <div>
+                <p>Fill this form to edit the selected To Do:</p>
+                <label for="selectEditProject">Choose a project:</label>
+                <select id="selectEditProject" name="project">
+                    <option value="none">--Please choose an option--</option>
+                </select>
+                
+                <label for="addEditTask">Task:</label>
+                <input type="text" id="addEditTask" name="task"
+                required minlength="3" maxlength="18">
+                
+                <label for="addEditDue">Due date:</label>
+                <input type="date" id="addEditDue" name="date" required>
+                
+                <label for="addEditPriority">Priority:</label>
+                <select type="text" id="addEditPriority" name="priority">
+                    <option value="low">--Please choose an option--</option>
+                </select>
+
+                <label for="addEditNotes">Notes:</label>
+                <input type="text" id="addEditNotes" name="notes">
+            </div>
+
+            <div id="formButtons">
+                <button type="submit" class="doStuff" id="submitEditForm">Submit</button>
+                <button class="doStuff" id="cancelEditForm">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
