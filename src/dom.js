@@ -2,8 +2,6 @@ import { list , displayEditForm } from "./element.js";
 import { projects } from "./project.js";
 import { storeItem , dateSorting, sortByProject } from "./storage.js";
 
-console.log("dom");
-
 function getColor (item) {
     const count = projects.length;
     for (let e=0; e<count; e++){
@@ -239,6 +237,7 @@ function sortedBy () {
         clearDom(c);
         sortingToggle = true;
         showTasks();
+        sortByProject();
     }
     
 }

@@ -2,8 +2,6 @@ import { projects } from "./project.js";
 import { storeItem , getItem } from "./storage.js";
 import { showTasks, clearDom, refreshDom , edit} from "./dom.js";
 
-console.log("element");
-
 class Element { //Class for ToDo elements
     constructor(project, task, date, priority, notes) {
         this.project = project;
@@ -26,14 +24,6 @@ export function newTask () {  //form to enter new ToDo
     const notes = document.getElementById("addNotes").value;
     list.push(new Element (project, task, date, priority, notes));
     storeItem("tasks", list); //stores the latest tasks list
-}
-
-export function printList () { //print the entire ToDo list on console (from localStorage)
-    const l = getItem("tasks");
-    console.log("storage");
-    console.log(l);
-    console.log("session");
-    console.log(list);
 }
 
 function displayForm () { //displays form to add new ToDo
