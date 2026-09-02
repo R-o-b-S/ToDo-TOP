@@ -14,7 +14,13 @@ function getColor (item) {
 export let edit = "";
 
 export function showTasks () {
-    dateSorting(list);
+    if (sortingToggle === false) {
+        dateSorting(list);
+    }
+    else if (sortingToggle === true) {
+        sortByProject();
+    }
+    
     if (showCompleted === true) {
         const counter = list.length;
         for (let i=0; i<counter; i++){
@@ -237,7 +243,6 @@ function sortedBy () {
         clearDom(c);
         sortingToggle = true;
         showTasks();
-        sortByProject();
     }
     
 }

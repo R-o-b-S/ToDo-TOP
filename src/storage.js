@@ -42,7 +42,6 @@ export function dateSorting () {
 }
 
 export function sortByProject () {
-    console.log ("test sort by Project");
     const sorting = [];
     const sorted = [];
     const cP = projects.length;
